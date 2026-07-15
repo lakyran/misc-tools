@@ -1,6 +1,23 @@
-# Rules
+# Transaction Summary
 
-1. Ask, don't assume. If something is unclear, ask before writing a single line. Never make silent assumptions about intent, architecture, or requirements.
-2. Don't touch unrelated code. If a file or function is not directly part of the current task, do not modify it, even if you think it could be improved.
-3. If you see a clearly better approach, say so before implementing. Explain the tradeoff in 2-4 bullets. If the current request is still reasonable, proceed unless the alternative avoids serious risk or wasted work.
-4. Flag uncertainty explicitly. If you are not confident about an approach or technical detail, say so before proceeding. Confidence without certainty causes more damage than admitting a gap.
+Static browser tool. See [README.md](README.md) and [SPEC.md](SPEC.md) for full behavior.
+
+## Architecture
+
+- `core.mjs` — parsing and formatting (tested in Node)
+- `ui.js` — DOM rendering and event handlers (browser only)
+- `build.js` — concatenates `core.mjs` + `ui.js` into `app.js` (strips `export` keywords)
+- `app.js` — generated bundle loaded by `index.html`; do not edit by hand
+
+## Development
+
+```bash
+npm run build   # regenerate app.js after editing core.mjs or ui.js
+npm test        # build + run Node unit tests (imports from core.mjs)
+```
+
+## Domain rules
+
+- Amounts default to **INR** unless a line has an explicit currency marker (`$`, `€`, `£`, etc.).
+- Grand total is omitted when mixed currencies are detected; per-line amounts still display.
+- No exchange-rate conversion, persistence, or backend.
