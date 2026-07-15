@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Summary</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Transaction Summary</h1>
+      <p class="subtitle">Paste your transaction list below. Amounts are assumed to be in Indian Rupees (₹) unless otherwise indicated.</p>
+    </header>
+
+    <section class="input-section">
+      <label for="transactions-input">Transactions</label>
+      <textarea
+        id="transactions-input"
+        rows="12"
+        placeholder="1. 42.50&#10;2. -1500.00&#10;- Coffee ₹450&#10;3) Rs. 1,23,456.78"
+      ></textarea>
+      <div class="actions">
+        <button type="button" id="summarize-btn" class="btn btn-primary">Summarize</button>
+        <button type="button" id="clear-btn" class="btn btn-secondary">Clear</button>
+      </div>
+    </section>
+
+    <p id="empty-message" class="empty-message" hidden>Paste a transaction list above and click Summarize.</p>
+
+    <section id="summary" class="summary-section" hidden aria-live="polite"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
