@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: #1a1a2e;
+  background: #f5f6fa;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.tools h2 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+}
+
+.tool-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tool-list li + li {
+  margin-top: 0.75rem;
+}
+
+.tool-list a {
+  display: block;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e0e3eb;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.tool-list a:hover {
+  border-color: #4a6cf7;
+  box-shadow: 0 4px 12px rgba(74, 108, 247, 0.12);
+}
+
+.tool-name {
+  display: block;
+  font-weight: 600;
+  color: #4a6cf7;
+  margin-bottom: 0.25rem;
+}
+
+.tool-desc {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.25rem 1rem 2rem;
+  }
+}
